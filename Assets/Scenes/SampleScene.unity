@@ -207,6 +207,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &303675555 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3100305297205541786, guid: 2f69124112cdf49e8bc413f4f3d9b80d, type: 3}
+  m_PrefabInstance: {fileID: 2248267840539818035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &303675558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303675555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf33a187fefc24f91b5279c1972bde19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDirection: 0
 --- !u!1 &493022653
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,6 +931,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  swordAttack: {fileID: 303675558}
   collisionOffset: 0.05
 --- !u!4 &765729599 stripped
 Transform:
@@ -28375,6 +28394,22 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.14168918
       objectReference: {fileID: 0}
+    - target: {fileID: 3003840276702254501, guid: 2f69124112cdf49e8bc413f4f3d9b80d, type: 3}
+      propertyPath: m_Size.x
+      value: 0.10600656
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003840276702254501, guid: 2f69124112cdf49e8bc413f4f3d9b80d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.09330797
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003840276702254501, guid: 2f69124112cdf49e8bc413f4f3d9b80d, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.015233979
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003840276702254501, guid: 2f69124112cdf49e8bc413f4f3d9b80d, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0043525696
+      objectReference: {fileID: 0}
     - target: {fileID: 3726715061945287081, guid: 2f69124112cdf49e8bc413f4f3d9b80d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -28419,6 +28454,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4217560342934061076, guid: 2f69124112cdf49e8bc413f4f3d9b80d, type: 3}
+      propertyPath: swordAttack
+      value: 
+      objectReference: {fileID: 303675558}
     - target: {fileID: 8648255753182407908, guid: 2f69124112cdf49e8bc413f4f3d9b80d, type: 3}
       propertyPath: m_Actions
       value: 

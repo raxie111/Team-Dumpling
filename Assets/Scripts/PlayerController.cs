@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     SpriteRenderer SpriteRenderer;
 
+    public Sword swordAttack;
+
     bool canMove = true;
 
 
@@ -29,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     public void FixedUpdate()
-    {   if(canMove){
+    {   
             if(movementInput != Vector2.zero)
             {
 
@@ -52,11 +54,13 @@ public class PlayerController : MonoBehaviour
 
             if(movementInput.x < 0){
                 SpriteRenderer.flipX = true;
+                swordAttack.attackDirection = Sword.AttackDirection.left;
             }else if(movementInput.x > 0){
                 SpriteRenderer.flipX = false;
-            }
+                swordAttack.attackDirection = Sword.AttackDirection.right;
         }
-    }
+        }
+    
 
     private bool TryMove(Vector2 direction)
     {
@@ -91,11 +95,5 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("swordAttack");
     }
 
-    public void LockMovement(){
-        canMove = false;
-    }
 
-    public void UnlockMovement(){
-        canMove = true;
-    }
 }
