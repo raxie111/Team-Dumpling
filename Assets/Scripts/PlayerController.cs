@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     public Sword swordAttack;
 
-    bool canMove = true;
+    
 
 
     public float collisionOffset = 0.05f; 
