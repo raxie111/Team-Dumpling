@@ -107,4 +107,9 @@ public class PlayerController : MonoBehaviour
             swordAttack.AttackRight();
         }
     }
+
+    public void EndSwordAttack()
+    {
+        swordAttack.stopAttack() ;
+    }
 }
