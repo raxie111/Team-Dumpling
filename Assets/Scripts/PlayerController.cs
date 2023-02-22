@@ -95,5 +95,16 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("swordAttack");
     }
 
+    public void SwordAttack()
+    {
 
+        if(SpriteRenderer.flipX == true)
+        {
+            swordAttack.Attackleft();
+        }
+        else
+        {
+            swordAttack.AttackRight();
+        }
+    }
 }
