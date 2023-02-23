@@ -57,9 +57,9 @@ public class PlayerController : MonoBehaviour
                 swordAttack.attackDirection = Sword.AttackDirection.left;
             }else if(movementInput.x > 0){
                 SpriteRenderer.flipX = false;
-                swordAttack.attackDirection = Sword.AttackDirection.right;
-        }
-        }
+            swordAttack.attackDirection = Sword.AttackDirection.right;
+        }               
+     }
     
 
     private bool TryMove(Vector2 direction)
