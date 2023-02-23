@@ -5,9 +5,10 @@ using UnityEngine;
 public class Sword : MonoBehaviour
 
 {
+    public Collider2D swordCollider;
     public float damage = 3;
 
-    public Collider2D swordCollider;
+    
     Vector2 rightAttackOffset;
     public enum AttackDirection
     {
@@ -20,7 +21,7 @@ public class Sword : MonoBehaviour
 
     private void Start()
     {
-        swordCollider = GetComponent<Collider2D>();
+
         rightAttackOffset = transform.position;
     }
 
@@ -38,14 +39,16 @@ public class Sword : MonoBehaviour
     }
     public void Attackleft()
     {
+        print("Attack Left");
         swordCollider.enabled = true;
-        transform.position = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y);
+        transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y);
     }
 
     public void AttackRight()
     {
+        print("Attack Right");
         swordCollider.enabled = true;
-        transform.position = rightAttackOffset;
+        transform.localPosition = rightAttackOffset;
     }
 
     public void stopAttack()

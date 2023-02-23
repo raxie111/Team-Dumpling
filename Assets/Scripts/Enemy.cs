@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
             return health;
         }
     }
+
     public float health = 1;
 
     public void Defeated()
