@@ -5,10 +5,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     Animator animator;
-    public float speed;
+    
     private Rigidbody2D enemyRb;
-    private GameObject player;
+    private PlayerController player;
 
+    public float movespeed;
+    private Vector3 directionPlayer;
+    private Vector3 localScale; 
+    
+ 
 
     public float Health
     {
@@ -30,14 +35,39 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        enemyRb.AddForce((player.transform.position - transform.position).normalized * speed);
+        enemyRb.AddForce((player.transform.position - transform.position).normalized * movespeed);
+    }
+
+    private void FixedUpdate()
+    {
+        MoveEnemy();
     }
 
     private void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
-        player = GameObject.Find("player_6");
+        player = FindObjectOfType(typeof(PlayerController)) as PlayerController;
         animator = GetComponent<Animator>();
+        localScale = transform.localScale;
+    }
+
+    private void MoveEnemy()
+    {
+        directionPlayer = (player.transform.position - transform.position).normalized;
+        enemyRb.velocity = new Vector2(directionPlayer.x, directionPlayer.y) * movespeed;
+            
+    }
+
+    private void LateUpdate()
+    {
+        if (enemyRb.velocity.x > 0)
+        {
+            transform.localScale = new Vector3(localScale.x, localScale.y, localScale.z);
+        }
+        else if(enemyRb.velocity.x < 0)
+        {
+            transform.localScale = new Vector3(-localScale.x, localScale.y, localScale.z);
+        }
     }
 
 
