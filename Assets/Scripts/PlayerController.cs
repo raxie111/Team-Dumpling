@@ -15,10 +15,11 @@ public class PlayerController : MonoBehaviour
 
     public Sword swordAttack;
 
+
     
 
 
-    public float collisionOffset = 0.05f; 
+    public float collisionOffset = 0.05f;
 
 
     // Start is called before the first frame update
@@ -99,9 +100,10 @@ public class PlayerController : MonoBehaviour
     {
 
         if(SpriteRenderer.flipX == true)
-        {
+        { 
             swordAttack.Attackleft();
         }
+
         else
         {
             swordAttack.AttackRight();

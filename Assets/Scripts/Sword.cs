@@ -7,8 +7,9 @@ public class Sword : MonoBehaviour
 {
     public Collider2D swordCollider;
     public float damage = 3;
+    [SerializeField] private AudioSource swordSwingEffect;
 
-    
+
     Vector2 rightAttackOffset;
     public enum AttackDirection
     {
@@ -42,6 +43,7 @@ public class Sword : MonoBehaviour
         print("Attack Left");
         swordCollider.enabled = true;
         transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y);
+                 swordSwingEffect.Play();
     }
 
     public void AttackRight()
@@ -49,11 +51,13 @@ public class Sword : MonoBehaviour
         print("Attack Right");
         swordCollider.enabled = true;
         transform.localPosition = rightAttackOffset;
+        swordSwingEffect.Play();
     }
 
     public void stopAttack()
     {
-        swordCollider.enabled = false; 
+        swordSwingEffect.Stop();
+        swordCollider.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
