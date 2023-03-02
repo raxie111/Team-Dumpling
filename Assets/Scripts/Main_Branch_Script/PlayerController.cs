@@ -15,20 +15,16 @@ public class PlayerController : MonoBehaviour
 
     public Sword swordAttack;
 
-    public int health;
-    public int maxHealth = 3;
-    public HealthBar healthBar;
 
-    private gamemanager gameManager;
+    
 
-    public float collisionOffset = 0.05f; 
+
+    public float collisionOffset = 0.05f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        health = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
@@ -59,10 +55,10 @@ public class PlayerController : MonoBehaviour
 
             if(movementInput.x < 0){
                 SpriteRenderer.flipX = true;
-            swordAttack.attackDirection = Sword.AttackDirection.left;
+                swordAttack.attackDirection = Sword.AttackDirection.left;
             }else if(movementInput.x > 0){
                 SpriteRenderer.flipX = false;
-             swordAttack.attackDirection = Sword.AttackDirection.right;
+            swordAttack.attackDirection = Sword.AttackDirection.right;
         }               
      }
     
@@ -104,9 +100,10 @@ public class PlayerController : MonoBehaviour
     {
 
         if(SpriteRenderer.flipX == true)
-        {
+        { 
             swordAttack.Attackleft();
         }
+
         else
         {
             swordAttack.AttackRight();
@@ -115,18 +112,6 @@ public class PlayerController : MonoBehaviour
 
     public void EndSwordAttack()
     {
-        swordAttack.stopAttack();
-    }
-
-    public void TakeDamage(int amount)
-    {
-        health -= amount;
-
-        healthBar.SetHealth(health);
-        if(health == 0)
-        {
-            Destroy(gameObject);
-            gameManager.GameOver();
-        }
+        swordAttack.stopAttack() ;
     }
 }

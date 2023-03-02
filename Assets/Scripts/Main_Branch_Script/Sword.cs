@@ -6,9 +6,10 @@ public class Sword : MonoBehaviour
 
 {
     public Collider2D swordCollider;
-    public float damage = 1;
+    public float damage = 3;
+    [SerializeField] private AudioSource swordSwingEffect;
 
-    
+
     Vector2 rightAttackOffset;
     public enum AttackDirection
     {
@@ -16,7 +17,6 @@ public class Sword : MonoBehaviour
     }
 
     public AttackDirection attackDirection;
-    [SerializeField] private AudioSource swordSwing;
 
     // Start is called before the first frame update
 
@@ -40,24 +40,24 @@ public class Sword : MonoBehaviour
     }
     public void Attackleft()
     {
-            
+        print("Attack Left");
         swordCollider.enabled = true;
         transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y);
-        swordSwing.Play();
+                 swordSwingEffect.Play();
     }
 
     public void AttackRight()
     {
-       
+        print("Attack Right");
         swordCollider.enabled = true;
         transform.localPosition = rightAttackOffset;
-        swordSwing.Play();
+        swordSwingEffect.Play();
     }
 
     public void stopAttack()
     {
+        swordSwingEffect.Stop();
         swordCollider.enabled = false;
-        swordSwing.Stop();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -67,9 +67,9 @@ public class Sword : MonoBehaviour
             // Deal damage
             Enemy enemy = other.GetComponent<Enemy>();
 
-            if (enemy)
+            if (enemy != null)
             {
-                enemy.Health = enemy.Health - damage;
+                enemy.Health -= damage;
             }
         }
 
