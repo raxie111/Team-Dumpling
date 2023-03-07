@@ -4,17 +4,30 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ClickyButton : MonoBehaviour
+public class ClickyButton : MonoBehaviour,IPointerDownHandler, IPointerUpHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Image _img;
+    [SerializeField] private Sprite _default, _pressed;
+    [SerializeField] private AudioClip _compressedClip, _uncompressedClip;
+    [SerializeField] private AudioSource _source;
+
+    
+    public void OnPointerDown(PointerEventData eventData)
     {
-        
+        _img.sprite = _pressed;
+        _source.PlayOneShot(_compressedClip);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerUp(PointerEventData eventData)
     {
-        
+        _img.sprite = _default;
+        _source.PlayOneShot(_uncompressedClip);
     }
+
+    public void IwasClicked()
+    {
+        Debug.Log("Clicked!");
+    }
+
 }
+
