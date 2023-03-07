@@ -16,6 +16,7 @@ public class Sword : MonoBehaviour
     }
 
     public AttackDirection attackDirection;
+    [SerializeField] private AudioSource swordSwing;
 
     // Start is called before the first frame update
 
@@ -42,6 +43,7 @@ public class Sword : MonoBehaviour
             
         swordCollider.enabled = true;
         transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y);
+        swordSwing.Play();
     }
 
     public void AttackRight()
@@ -49,11 +51,13 @@ public class Sword : MonoBehaviour
        
         swordCollider.enabled = true;
         transform.localPosition = rightAttackOffset;
+        swordSwing.Play();
     }
 
     public void stopAttack()
     {
-        swordCollider.enabled = false; 
+        swordCollider.enabled = false;
+        swordSwing.Stop();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
