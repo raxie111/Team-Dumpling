@@ -33,10 +33,7 @@ public class Enemy : MonoBehaviour
 
     public float health = 1;
 
-    void Update()
-    {
-        enemyRb.AddForce((player.transform.position - transform.position).normalized * movespeed);
-    }
+   
 
     private void FixedUpdate()
     {
