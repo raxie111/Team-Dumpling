@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
             if (health <= 0)
             {
                 Defeated();
+                
             }
         }
         get
@@ -31,7 +32,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public float health = 1;
+    public float health = 3;
 
    
 

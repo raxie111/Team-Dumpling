@@ -6,7 +6,7 @@ public class Sword : MonoBehaviour
 
 {
     public Collider2D swordCollider;
-    public float damage = 3;
+    public float damage = 1;
 
     
     Vector2 rightAttackOffset;
@@ -67,9 +67,9 @@ public class Sword : MonoBehaviour
             // Deal damage
             Enemy enemy = other.GetComponent<Enemy>();
 
-            if (enemy != null)
+            if (enemy)
             {
-                enemy.Health -= damage;
+                enemy.Health = enemy.Health - damage;
             }
         }
 
