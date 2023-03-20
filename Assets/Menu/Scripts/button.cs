@@ -22,4 +22,6 @@ public class button : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         _img.sprite = _default;
         _source.PlayOneShot(_uncompressedClip);
     }
+
+    public void whenButtonClicked()
 }
