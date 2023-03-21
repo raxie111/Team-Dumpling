@@ -11,10 +11,11 @@ public class Enemy : MonoBehaviour
 
     public float movespeed;
     private Vector3 directionPlayer;
-    private Vector3 localScale; 
-    
- 
+    private Vector3 localScale;
 
+
+
+    [SerializeField] private AudioSource slimeDeath;
     public float Health
     {
         set
@@ -23,7 +24,9 @@ public class Enemy : MonoBehaviour
             if (health <= 0)
             {
                 Defeated();
-                
+                slimeDeath.Play();
+
+
             }
         }
         get

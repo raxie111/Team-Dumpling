@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MuteAudio : MonoBehaviour
+//[SerializeField] private AudioSource muteAudio;
 {
     public void MuteToggle(bool muted)
     {
@@ -13,7 +14,7 @@ public class MuteAudio : MonoBehaviour
         }
         else
         {
-            AudioListener.volume = 1;
+           AudioListener.volume = 1;
         }
 
 
