@@ -626,6 +626,55 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &487430595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 487430597}
+  - component: {fileID: 487430596}
+  m_Layer: 0
+  m_Name: SlimeSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &487430596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487430595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6a86a7add2344508c4e40e460289a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slimePrefab: {fileID: 871374961}
+  playerTransform: {fileID: 3121899392135163506, guid: 2f2e4f8de57934631b3fe47c06c1603f, type: 3}
+  spawnDistance: 10
+  spawnInterval: 20
+  maxSlimes: 5
+--- !u!4 &487430597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487430595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &493022653
 GameObject:
   m_ObjectHideFlags: 0
@@ -4435,7 +4484,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3032196220819569019, guid: bf13b38abee5c4ff6930c8eae7d8ceed, type: 3}
+    - {fileID: 1125967100709182052, guid: bf13b38abee5c4ff6930c8eae7d8ceed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf13b38abee5c4ff6930c8eae7d8ceed, type: 3}
+--- !u!1 &871374961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5730832203114736036, guid: bf13b38abee5c4ff6930c8eae7d8ceed, type: 3}
+  m_PrefabInstance: {fileID: 871374960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &947448222 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2171169225998246378, guid: bf13b38abee5c4ff6930c8eae7d8ceed, type: 3}
