@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GamePause : MonoBehaviour
+
 {
    [SerializeField] public GameObject PauseGame;
 
