@@ -655,8 +655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be6a86a7add2344508c4e40e460289a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slimePrefab: {fileID: 871374961}
-  playerTransform: {fileID: 3121899392135163506, guid: 2f2e4f8de57934631b3fe47c06c1603f, type: 3}
+  slimePrefab: {fileID: 3121899392135163508, guid: 2f2e4f8de57934631b3fe47c06c1603f, type: 3}
+  playerTransform: {fileID: 221381144}
   spawnDistance: 10
   spawnInterval: 20
   maxSlimes: 5
@@ -4491,6 +4491,35 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5730832203114736036, guid: bf13b38abee5c4ff6930c8eae7d8ceed, type: 3}
   m_PrefabInstance: {fileID: 871374960}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &871374967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871374961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b005eaaf1c540969f3c0f458959a4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  movementFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  swordAttack: {fileID: 0}
+  collisionOffset: 0.05
 --- !u!1 &947448222 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2171169225998246378, guid: bf13b38abee5c4ff6930c8eae7d8ceed, type: 3}
@@ -4970,6 +4999,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 961334628}
     m_Modifications:
+    - target: {fileID: -7188480322842603778, guid: 2f2e4f8de57934631b3fe47c06c1603f, type: 3}
+      propertyPath: movespeed
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3121899392135163506, guid: 2f2e4f8de57934631b3fe47c06c1603f, type: 3}
       propertyPath: m_RootOrder
       value: 1

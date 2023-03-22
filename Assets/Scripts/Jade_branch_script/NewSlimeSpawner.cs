@@ -2,36 +2,63 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
+
 public class NewSlimeSpawner : MonoBehaviour
 {
-    public GameObject slimePrefab;  // Reference to the slime prefab
-    public Transform playerTransform;  // Reference to the player's transform
-    public float spawnDistance = 10f;  // Distance away from the player to spawn slimes
-    public float spawnInterval = 20f;  // Time in seconds between slime spawns
-    public int maxSlimes = 5;  // Maximum number of slimes to spawn
+    public GameObject Player;
+    public GameObject slimePrefab; // The prefab for the slime object
+    public int maxSlimes = 5; // The maximum number of slimes that can be spawned
+    public float spawnInterval = 20.0f; // The time interval between slime spawns
+    public float maxSpawnDistance = 4.0f; // The maximum distance from the player that slimes can spawn
 
-    private int slimeCount = 0;  // Current number of spawned slimes
-    private float lastSpawnTime = 0f;  // Time when the last slime was spawned
+    private GameObject player; // Reference to the player GameObject
+    private int numSlimes = 0; // The current number of spawned slimes
+    private float timeSinceLastSpawn = 0.0f; // The time since the last slime was spawned
+    private bool hasSpawnedFirstSlime = false; // Flag indicating if the first slime has already been spawned
+
+    void Start()
+    {
+        // Find the player GameObject
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     void Update()
     {
-        // Check if it's time to spawn a new slime
-        if (slimeCount < maxSlimes && Time.time - lastSpawnTime > spawnInterval)
+        // If the maximum number of slimes has not been reached, check if it's time to spawn another slime
+        if (numSlimes < maxSlimes)
         {
-            SpawnSlime();
+            timeSinceLastSpawn += Time.deltaTime;
+            if (!hasSpawnedFirstSlime || timeSinceLastSpawn >= spawnInterval)
+            {
+                SpawnSlime();
+                timeSinceLastSpawn = 0.0f;
+            }
         }
     }
 
     void SpawnSlime()
     {
-        // Calculate the position to spawn the slime
-        Vector3 spawnPos = playerTransform.position + new Vector3(0f, spawnDistance, 0f);
+        // Check if the player GameObject has been found
+        if (Player == null)
+        {
+            Debug.LogError("Player not found!");
+            return;
+        }
 
-        // Instantiate the slime at the spawn position
-        GameObject newSlime = Instantiate(slimePrefab, spawnPos, Quaternion.identity);
+        // Calculate a random position within the maximum spawn distance of the player
+        Vector3 spawnOffset = new Vector3(Random.Range(-maxSpawnDistance, maxSpawnDistance), Random.Range(-maxSpawnDistance, maxSpawnDistance), 0.0f);
 
-        // Increment the slime count and update the last spawn time
-        slimeCount++;
-        lastSpawnTime = Time.time;
+        // Instantiate the slime prefab at the spawn position, offset from the player's position
+        Vector3 spawnPosition = player.transform.position + spawnOffset;
+        GameObject slimeObject = Instantiate(slimePrefab, spawnPosition, Quaternion.identity);
+
+        // Increment the number of spawned slimes and set the flag indicating the first slime has been spawned
+        numSlimes++;
+        hasSpawnedFirstSlime = true;
     }
+
 }
+
