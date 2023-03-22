@@ -4299,7 +4299,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 472884897640930265, guid: bf13b38abee5c4ff6930c8eae7d8ceed, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 472884897640930265, guid: bf13b38abee5c4ff6930c8eae7d8ceed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4488,10 +4488,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 47764033}
-  - {fileID: 1978152023}
   - {fileID: 221381144}
   - {fileID: 212286230}
+  - {fileID: 1978152023}
+  - {fileID: 47764033}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4775,7 +4775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3121899392135163506, guid: 2f2e4f8de57934631b3fe47c06c1603f, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3121899392135163506, guid: 2f2e4f8de57934631b3fe47c06c1603f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4832,7 +4832,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3121899392135163506, guid: 2f2e4f8de57934631b3fe47c06c1603f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3121899392135163506, guid: 2f2e4f8de57934631b3fe47c06c1603f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11871,7 +11871,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3121899392135163506, guid: 2f2e4f8de57934631b3fe47c06c1603f, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3121899392135163506, guid: 2f2e4f8de57934631b3fe47c06c1603f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11916,6 +11916,10 @@ PrefabInstance:
     - target: {fileID: 3121899392135163508, guid: 2f2e4f8de57934631b3fe47c06c1603f, type: 3}
       propertyPath: m_Name
       value: Slime (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121899392135163509, guid: 2f2e4f8de57934631b3fe47c06c1603f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f2e4f8de57934631b3fe47c06c1603f, type: 3}
