@@ -54,10 +54,10 @@ public class PlayerController : MonoBehaviour
 
             if(movementInput.x < 0){
                 SpriteRenderer.flipX = true;
-                swordAttack.attackDirection = Sword.AttackDirection.left;
+            swordAttack.attackDirection = Sword.AttackDirection.left;
             }else if(movementInput.x > 0){
                 SpriteRenderer.flipX = false;
-            swordAttack.attackDirection = Sword.AttackDirection.right;
+             swordAttack.attackDirection = Sword.AttackDirection.right;
         }               
      }
     
@@ -110,6 +110,6 @@ public class PlayerController : MonoBehaviour
 
     public void EndSwordAttack()
     {
-        swordAttack.stopAttack() ;
+        swordAttack.stopAttack();
     }
 }
