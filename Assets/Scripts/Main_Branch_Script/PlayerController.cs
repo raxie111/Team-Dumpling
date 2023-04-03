@@ -15,7 +15,9 @@ public class PlayerController : MonoBehaviour
 
     public Sword swordAttack;
 
-    
+    public int health;
+    public int maxHealth = 3;
+
 
 
     public float collisionOffset = 0.05f; 
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = maxHealth;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
@@ -111,5 +114,14 @@ public class PlayerController : MonoBehaviour
     public void EndSwordAttack()
     {
         swordAttack.stopAttack();
+    }
+
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+        if(health == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
