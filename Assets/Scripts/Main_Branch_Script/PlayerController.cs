@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     public int health;
     public int maxHealth = 3;
-    public HealthBar healthBar;
+    //public HealthBar healthBar;
 
 
     public float collisionOffset = 0.05f; 
@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        //health = maxHealth;
+        //healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
     {
         health -= amount;
         
-        healthBar.SetHealth(health);
+        //healthBar.SetHealth(health);
 
         if(health == 0)
         {
