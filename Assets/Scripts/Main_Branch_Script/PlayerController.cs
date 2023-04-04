@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     public int health;
     public int maxHealth = 3;
-
+    public HealthBar healthBar;
 
 
     public float collisionOffset = 0.05f; 
@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
@@ -119,6 +120,9 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount;
+        
+        healthBar.SetHealth(health);
+
         if(health == 0)
         {
             Destroy(gameObject);
