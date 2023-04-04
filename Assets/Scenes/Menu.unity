@@ -194,11 +194,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 063863279cc5b41a2a3f7ece0cbffcfd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -465,8 +465,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 15
-    height: 15
+    width: 14
+    height: 14
 --- !u!222 &458643642
 CanvasRenderer:
   m_ObjectHideFlags: 0
