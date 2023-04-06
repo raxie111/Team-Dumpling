@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 3;
     public HealthBar healthBar;
 
+    private gamemanager gameManager;
 
     public float collisionOffset = 0.05f; 
 
@@ -125,6 +126,7 @@ public class PlayerController : MonoBehaviour
         if(health == 0)
         {
             Destroy(gameObject);
+            gameManager.GameOver();
         }
     }
 }
