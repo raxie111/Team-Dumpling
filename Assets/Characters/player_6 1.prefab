@@ -389,7 +389,7 @@ MonoBehaviour:
     maxNormalAngle: 0
   swordAttack: {fileID: 2101557260142727032}
   health: 0
-  maxHealth: 3
+  maxHealth: 20
   healthBar: {fileID: 0}
   collisionOffset: 0.05
 --- !u!114 &207073356

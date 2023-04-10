@@ -173,4 +173,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
-  damage: 1
+  damage: 2
