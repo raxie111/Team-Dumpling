@@ -10,7 +10,7 @@ public class Load : MonoBehaviour
     }
     IEnumerator DelaySceneLoad()
     {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("Gamescene");
+        yield return new WaitForSeconds(7f);
+        SceneManager.LoadScene("GameScene");
     }
 }
