@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 3;
     public HealthBar healthBar;
 
+    public int sta;
+    public int maxSta = 20;
+    public Meatbar meatbar;
+
     private gamemanager gameManager;
 
     public float collisionOffset = 0.05f; 
@@ -128,5 +132,10 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
             gameManager.GameOver();
         }
+    }
+
+    public void IncreaseSta(int amount)
+    {
+
     }
 }
