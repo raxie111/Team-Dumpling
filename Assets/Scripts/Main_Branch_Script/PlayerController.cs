@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public Meatbar meatbar;
     public GameObject meat;
 
-    private gamemanager gameManager;
+    
 
     public float collisionOffset = 0.05f;
 
