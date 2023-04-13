@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public int sta;
     public int maxSta = 20;
     public Meatbar meatbar;
+    public GameObject meat;
 
     private gamemanager gameManager;
 
@@ -133,6 +134,8 @@ public class PlayerController : MonoBehaviour
             gameManager.GameOver();
         }
     }
+
+
 
     public void IncreaseSta(int amount)
     {

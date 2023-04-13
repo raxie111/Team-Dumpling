@@ -6,9 +6,9 @@ public class meatspawmer : MonoBehaviour
 {
     public GameObject Player;
     public GameObject meatPrefab; // The prefab for the meat object
-    public int maxMeats = 10; // The maximum number of slimes that can be spawned
-    public float spawnInterval = 20.0f; // The time interval between slime spawns
-    public float maxSpawnDistance = 4.0f; // The maximum distance from the player that slimes can spawn
+    public int maxMeats; // The maximum number of slimes that can be spawned
+    public float spawnInterval; // The time interval between slime spawns
+    public float maxSpawnDistance; // The maximum distance from the player that slimes can spawn
 
     private GameObject player; // Reference to the player GameObject
     private int numMeats = 0; // The current number of spawned slimes
