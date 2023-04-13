@@ -13,7 +13,7 @@ public class Meat : MonoBehaviour
         {
             
             Destroy(gameObject);
-            meatbar.slider.value += 15;
+            meatbar.slider.value += 5;
         }
         
     }
