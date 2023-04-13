@@ -26,7 +26,9 @@ public class PlayerController : MonoBehaviour
 
     private gamemanager gameManager;
 
-    public float collisionOffset = 0.05f; 
+    public float collisionOffset = 0.05f;
+
+    public GameObject obj;
 
 
     // Start is called before the first frame update
@@ -131,7 +133,7 @@ public class PlayerController : MonoBehaviour
         if(health == 0)
         {
             Destroy(gameObject);
-            gameManager.GameOver();
+            obj.SetActive(true);
         }
     }
 
