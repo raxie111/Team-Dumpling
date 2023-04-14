@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public float collisionOffset = 0.05f;
 
     public GameObject obj;
+    public GameObject topright;
 
     public AudioClip gameover;
     AudioSource audioSource;
@@ -138,6 +139,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
             obj.SetActive(true);
+            topright.SetActive(false);
             audioSource.PlayOneShot(gameover, 0.7F);
             Time.timeScale = 0f;
         }

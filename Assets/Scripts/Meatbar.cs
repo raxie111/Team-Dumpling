@@ -10,6 +10,7 @@ public class Meatbar : MonoBehaviour
     public Slider slider;
     public int sta;
     public GameObject obj;
+    public GameObject topright;
 
     public AudioClip gameover;
     AudioSource audioSource;
@@ -50,6 +51,7 @@ public class Meatbar : MonoBehaviour
             {
                 Destroy(GameObject.FindWithTag("Player"));
                 obj.SetActive(true);
+                topright.SetActive(false);
                 audioSource.PlayOneShot(gameover, 0.7F);
                 Time.timeScale = 0f;
                 break;
