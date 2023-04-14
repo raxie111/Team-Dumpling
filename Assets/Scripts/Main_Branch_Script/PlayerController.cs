@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
     Vector2 movementInput;
     Rigidbody2D rb;
     public float moveSpeed = 1f;
@@ -25,16 +26,23 @@ public class PlayerController : MonoBehaviour
     public float collisionOffset = 0.05f;
 
     public GameObject obj;
-    public PauseMenu PauseM;
+
+    public AudioClip gameover;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
         rb = GetComponent<Rigidbody2D>();
+
         animator = GetComponent<Animator>();
+
         SpriteRenderer = GetComponent<SpriteRenderer>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -130,7 +138,8 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
             obj.SetActive(true);
-            PauseM.Pause();
+            audioSource.PlayOneShot(gameover, 0.7F);
+            Time.timeScale = 0f;
         }
     }
 }
