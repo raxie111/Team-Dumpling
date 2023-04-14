@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Meatbar : MonoBehaviour
 {
     public Slider slider;
     public int sta;
     public GameObject obj;
+    public PauseMenu PauseM;
 
     private void Start()
     {
@@ -44,6 +46,7 @@ public class Meatbar : MonoBehaviour
             {
                 Destroy(GameObject.FindWithTag("Player"));
                 obj.SetActive(true);
+                PauseM.Pause();
                 break;
 
             }

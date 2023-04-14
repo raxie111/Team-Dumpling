@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,17 +20,12 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 3;
     public HealthBar healthBar;
 
-    public int sta;
     public int maxSta = 20;
-    public Meatbar meatbar;
-    public GameObject meat;
-
-    
 
     public float collisionOffset = 0.05f;
 
     public GameObject obj;
-
+    public PauseMenu PauseM;
 
     // Start is called before the first frame update
     void Start()
@@ -134,13 +130,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
             obj.SetActive(true);
+            PauseM.Pause();
         }
-    }
-
-
-
-    public void IncreaseSta(int amount)
-    {
-
     }
 }
