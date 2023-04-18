@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8736205913977991389}
   - component: {fileID: 3025940098520748196}
   m_Layer: 0
-  m_Name: ooze-green
+  m_Name: Boss_Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
