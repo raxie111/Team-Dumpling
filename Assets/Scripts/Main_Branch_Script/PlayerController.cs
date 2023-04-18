@@ -24,12 +24,10 @@ public class PlayerController : MonoBehaviour
     public int maxSta = 20;
 
     public float collisionOffset = 0.05f;
+        
+  
 
-    public GameObject obj;
-    public GameObject topright;
 
-    public AudioClip gameover;
-    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
         SpriteRenderer = GetComponent<SpriteRenderer>();
 
-        audioSource = GetComponent<AudioSource>();
+      
     }
 
     // Update is called once per frame
@@ -138,10 +136,9 @@ public class PlayerController : MonoBehaviour
         if(health == 0)
         {
             Destroy(gameObject);
-            obj.SetActive(true);
-            topright.SetActive(false);
-            audioSource.PlayOneShot(gameover, 0.7F);
-            Time.timeScale = 0f;
+
+            SceneManager.LoadScene("GameOver");
+            
         }
     }
 }

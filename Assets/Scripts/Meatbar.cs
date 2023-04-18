@@ -9,16 +9,11 @@ public class Meatbar : MonoBehaviour
     [SerializeField]
     public Slider slider;
     public int sta;
-    public GameObject obj;
-    public GameObject topright;
-
-    public AudioClip gameover;
-    AudioSource audioSource;
-
+    
     void Start()
     {
         DecreaseSta();
-        audioSource = GetComponent<AudioSource>();
+       
     }
 
     public void SetMaxSta(int sta)
@@ -50,12 +45,8 @@ public class Meatbar : MonoBehaviour
             if(slider.value <= 0)
             {
                 Destroy(GameObject.FindWithTag("Player"));
-                obj.SetActive(true);
-                topright.SetActive(false);
-                audioSource.PlayOneShot(gameover, 0.7F);
-                Time.timeScale = 0f;
+                SceneManager.LoadScene("GameOver");
                 break;
-
             }
         }
         yield return null;
