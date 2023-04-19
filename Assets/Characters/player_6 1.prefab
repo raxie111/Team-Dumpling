@@ -373,6 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b005eaaf1c540969f3c0f458959a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementInput: {x: 0, y: 0}
   moveSpeed: 1
   movementFilter:
     useTriggers: 0
@@ -392,11 +393,8 @@ MonoBehaviour:
   health: 0
   maxHealth: 20
   healthBar: {fileID: 0}
-  maxSta: 20
+  maxSta: 30
   collisionOffset: 0.05
-  obj: {fileID: 0}
-  PauseM: {fileID: 0}
-  gameover: {fileID: 8300000, guid: ca7b5b2d62ae2fa43aad1e73e24e239a, type: 3}
 --- !u!114 &207073356
 MonoBehaviour:
   m_ObjectHideFlags: 0
