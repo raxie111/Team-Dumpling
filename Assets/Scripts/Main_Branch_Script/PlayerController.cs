@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
     Vector2 movementInput;
     Rigidbody2D rb;
     public float moveSpeed = 1f;
@@ -19,9 +21,12 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 3;
     public HealthBar healthBar;
 
-    private gamemanager gameManager;
+    public int maxSta = 20;
 
-    public float collisionOffset = 0.05f; 
+    public float collisionOffset = 0.05f;
+        
+  
+
 
 
     // Start is called before the first frame update
@@ -29,9 +34,14 @@ public class PlayerController : MonoBehaviour
     {
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
         rb = GetComponent<Rigidbody2D>();
+
         animator = GetComponent<Animator>();
+
         SpriteRenderer = GetComponent<SpriteRenderer>();
+
+      
     }
 
     // Update is called once per frame
@@ -126,7 +136,9 @@ public class PlayerController : MonoBehaviour
         if(health == 0)
         {
             Destroy(gameObject);
-            gameManager.GameOver();
+
+            SceneManager.LoadScene("GameOver");
+            
         }
     }
 }
