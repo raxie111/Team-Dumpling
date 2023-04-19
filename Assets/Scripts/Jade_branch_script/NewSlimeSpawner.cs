@@ -10,7 +10,6 @@ public class NewSlimeSpawner : MonoBehaviour
 {
     public GameObject Player;
     public GameObject slimePrefab; // The prefab for the slime object
-    public int maxSlimes = 5; // The maximum number of slimes that can be spawned
     public float spawnInterval = 20.0f; // The time interval between slime spawns
     public float maxSpawnDistance = 4.0f; // The maximum distance from the player that slimes can spawn
 
@@ -27,16 +26,12 @@ public class NewSlimeSpawner : MonoBehaviour
 
     void Update()
     {
-        // If the maximum number of slimes has not been reached, check if it's time to spawn another slime
-        if (numSlimes < maxSlimes)
-        {
             timeSinceLastSpawn += Time.deltaTime;
             if (!hasSpawnedFirstSlime || timeSinceLastSpawn >= spawnInterval)
             {
                 SpawnSlime();
                 timeSinceLastSpawn = 0.0f;
             }
-        }
     }
 
     void SpawnSlime()
