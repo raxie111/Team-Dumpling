@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,11 @@ public class PlayerController : MonoBehaviour
 
 
     public float collisionOffset = 0.05f;
+
+    internal void TakeDamage(int damage)
+    {
+        throw new NotImplementedException();
+    }
 
 
     // Start is called before the first frame update
