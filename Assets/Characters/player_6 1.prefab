@@ -47,7 +47,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.023371786, y: 0.03895296}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -58,7 +58,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.10600656, y: 0.3}
+  m_Size: {x: 0.15275015, y: 0.37790594}
   m_EdgeRadius: 0
 --- !u!114 &2101557260142727032
 MonoBehaviour:
@@ -328,7 +328,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0044065937, y: -0.15609227}
+  m_Offset: {x: 0.007439046, y: -0.15912473}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -339,7 +339,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.05641474, y: 0.021710247}
+  m_Size: {x: 0.074609555, y: 0.03384012}
   m_EdgeRadius: 0
 --- !u!95 &4604743098290719538
 Animator:
@@ -392,7 +392,7 @@ MonoBehaviour:
   swordAttack: {fileID: 2101557260142727032}
   health: 0
   maxHealth: 20
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 7262893672349727887, guid: 92e9b03dac5f94210b3f09fb2cc0fcc4, type: 3}
   maxSta: 30
   collisionOffset: 0.05
 --- !u!114 &207073356
