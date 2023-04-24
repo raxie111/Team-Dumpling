@@ -6,7 +6,7 @@ public class meatspawmer : MonoBehaviour
 {
     public GameObject Player;
     public GameObject meatPrefab; // The prefab for the meat object
-    
+    public int maxMeats; // The maximum number of slimes that can be spawned
     public float spawnInterval; // The time interval between slime spawns
     public float maxSpawnDistance; // The maximum distance from the player that slimes can spawn
 
@@ -23,15 +23,16 @@ public class meatspawmer : MonoBehaviour
 
     void Update()
     {
-       
-        
+        // If the maximum number of slimes has not been reached, check if it's time to spawn another slime
+        if (numMeats < maxMeats)
+        {
             timeSinceLastSpawn += Time.deltaTime;
             if (!hasSpawnedFirstSlime || timeSinceLastSpawn >= spawnInterval)
             {
                 SpawnSlime();
                 timeSinceLastSpawn = 0.0f;
             }
-       
+        }
     }
 
     void SpawnSlime()
@@ -48,7 +49,7 @@ public class meatspawmer : MonoBehaviour
 
         // Instantiate the slime prefab at the spawn position, offset from the player's position
         Vector3 spawnPosition = player.transform.position + spawnOffset;
-        GameObject meatObject = Instantiate(meatPrefab, spawnPosition, Quaternion.identity);
+        GameObject slimeObject = Instantiate(meatPrefab, spawnPosition, Quaternion.identity);
 
         // Increment the number of spawned slimes and set the flag indicating the first slime has been spawned
         numMeats++;
