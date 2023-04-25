@@ -29,7 +29,40 @@ public class EnemyAI : MonoBehaviour
 
     public void Start()
     {
-    //seeker = GetComponent<Seeker>();
+       // seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+
+        InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
+    }
+
+    private void FixedUpdate()
+    {
+        //if (TargetInDistance() && FollowEnabled)
+        {
+           // PathFollow()
+        }
+    }
+
+    private void UpdatePath()
+    {
+        //if (FollowEnabled && TargetInDistance() && seeker.IsDone())
+        {
+           // Seeker.StartPath(rb.position, target.position, OnPathComplete);
+        }
+    }
+
+    private void PathFollow()
+    {
+        if (path == null)
+        {
+            return;
+        }
+
+        //See if colliding with anything
+        isGrounded = Physics2D.Raycast(transform.position, -Vector3.up, GetComponent<Collider2D>().bounds.extents.y + jumpCheckOffset);
+
+        //Direction Calculation
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        Vector2 force = direction * speed * Time.deltaTime;
     }
 }
