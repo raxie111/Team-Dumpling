@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,9 +13,11 @@ public class Enemy : MonoBehaviour
 
     public float movespeed;
     private Vector3 directionPlayer;
-    private Vector3 localScale; 
-    
- 
+    private Vector3 localScale;
+
+    public TextMeshProUGUI score;
+    private float count = 0;
+
 
     public float Health
     {
@@ -77,6 +81,8 @@ public class Enemy : MonoBehaviour
     public void RemoveEnemy()
     {
         Destroy(gameObject);
+        count += 1;
+        score.text = "Score: " + count;
     }
 
 }
