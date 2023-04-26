@@ -9,6 +9,7 @@ public class Proto4_Boss : MonoBehaviour
     public GameObject player;
     public float movespeed;
     private Vector3 directionPlayer;
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -31,4 +32,36 @@ public class Proto4_Boss : MonoBehaviour
         directionPlayer = (player.transform.position - transform.position).normalized;
         enemyRb.velocity = new Vector2(directionPlayer.x, directionPlayer.y) * movespeed;
     }
+
+
+
+    public float Health
+    {
+        set
+        {
+            health = value;
+            if (health <= 0)
+            {
+                RemoveBoss();
+
+            }
+        }
+        get
+        {
+            return health;
+        }
+    }
+
+    public float health = 3;
+
+
+
+
+
+    public void RemoveBoss()
+    {
+        Destroy(gameObject);
+    }
+
+   
 }
