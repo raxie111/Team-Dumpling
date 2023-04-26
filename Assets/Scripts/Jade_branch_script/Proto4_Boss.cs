@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Proto4_Enemy : MonoBehaviour
+public class Proto4_Boss : MonoBehaviour
 {
     
     private Rigidbody2D enemyRb;
