@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+
 
 public class Enemy : MonoBehaviour
 {
@@ -14,10 +13,7 @@ public class Enemy : MonoBehaviour
     public float movespeed;
     private Vector3 directionPlayer;
     private Vector3 localScale;
-
-    public TextMeshProUGUI score;
-    private float count = 0;
-
+    private gamemanager gameManager; 
 
     public float Health
     {
@@ -27,6 +23,8 @@ public class Enemy : MonoBehaviour
             if (health <= 0)
             {
                 Defeated();
+                
+                
                 
             }
         }
@@ -45,13 +43,16 @@ public class Enemy : MonoBehaviour
         MoveEnemy();
     }
 
-    private void Start()
+    void Start()
     {
+        gameManager = GameObject.Find("game manager");
         enemyRb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType(typeof(PlayerController)) as PlayerController;
         animator = GetComponent<Animator>();
         localScale = transform.localScale;
+
     }
+
 
     private void MoveEnemy()
     {
@@ -76,13 +77,16 @@ public class Enemy : MonoBehaviour
     public void Defeated()
     {
         animator.SetTrigger("Defeated");
+      
     }
 
     public void RemoveEnemy()
     {
         Destroy(gameObject);
-        count += 1;
-        score.text = "Score: " + count;
+        UpdateScore(1);
+        
     }
+
+    
 
 }

@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class restart : MonoBehaviour
 {
+   
+
     static public void ButtonFunction()
     {
         SceneManager.LoadScene("Loading Scene");
+        
 
     }
 

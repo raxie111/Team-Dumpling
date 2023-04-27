@@ -24,7 +24,9 @@ public class PlayerController : MonoBehaviour
     public int maxSta = 20;
 
     public float collisionOffset = 0.05f;
-        
+
+
+    public Enemy enemy; 
   
 
 
@@ -136,7 +138,6 @@ public class PlayerController : MonoBehaviour
         if(health == 0)
         {
             Destroy(gameObject);
-
             SceneManager.LoadScene("GameOver");
             
         }
