@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movespeed: 0.5
   gameManager: {fileID: 0}
+  pointvalue: 1
   health: 1
 --- !u!95 &7291140814566740776
 Animator:

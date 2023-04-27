@@ -13,7 +13,8 @@ public class Enemy : MonoBehaviour
     public float movespeed;
     private Vector3 directionPlayer;
     private Vector3 localScale;
-    public gamemanager gameManager; 
+    public gamemanager gameManager;
+    public int pointvalue;
 
     public float Health
     {
@@ -83,7 +84,7 @@ public class Enemy : MonoBehaviour
     public void RemoveEnemy()
     {
         Destroy(gameObject);
-        gameManager.UpdateScore(1);
+        gameManager.UpdateScore(pointvalue);
         
     }
 }
