@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     public float movespeed;
     private Vector3 directionPlayer;
     private Vector3 localScale;
-    private gamemanager gameManager; 
+    public gamemanager gameManager; 
 
     public float Health
     {
@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        gameManager = GameObject.Find("game manager");
+        
         enemyRb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType(typeof(PlayerController)) as PlayerController;
         animator = GetComponent<Animator>();
@@ -83,10 +83,7 @@ public class Enemy : MonoBehaviour
     public void RemoveEnemy()
     {
         Destroy(gameObject);
-        UpdateScore(1);
+        gameManager.UpdateScore(1);
         
     }
-
-    
-
 }
