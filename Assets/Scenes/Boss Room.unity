@@ -123,24 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &57963846 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2171169225998246378, guid: bf13b38abee5c4ff6930c8eae7d8ceed, type: 3}
-  m_PrefabInstance: {fileID: 191877634}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &57963851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57963846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be0641e2ecb6e4b399dc5240cb008a1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHP: 25
 --- !u!1001 &89243297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -265,9 +247,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2055960319683547093, guid: bf13b38abee5c4ff6930c8eae7d8ceed, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2171169225998246378, guid: bf13b38abee5c4ff6930c8eae7d8ceed, type: 3}
       propertyPath: m_TagString
       value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438726473988553969, guid: bf13b38abee5c4ff6930c8eae7d8ceed, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5558342564735252116, guid: bf13b38abee5c4ff6930c8eae7d8ceed, type: 3}
       propertyPath: m_Camera
@@ -27398,10 +27388,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0031471252, y: -0.018562794}
+  m_Offset: {x: -0.012844205, y: -0.018562794}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -27412,7 +27402,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5204072, y: 0.6028744}
+  m_Size: {x: 0.53980136, y: 0.6028744}
   m_EdgeRadius: 0
 --- !u!114 &1430598023
 MonoBehaviour:
@@ -27437,7 +27427,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430598004}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -27450,7 +27440,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1430598026
+--- !u!114 &1430598028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27459,10 +27449,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1430598004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be0641e2ecb6e4b399dc5240cb008a1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 15b87da8c80a445f2b05c0ce29a3a0b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHP: 25
+  maxHealth: 0
+  currentHealth: 0
 --- !u!1 &1513471359
 GameObject:
   m_ObjectHideFlags: 0
