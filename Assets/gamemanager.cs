@@ -7,6 +7,7 @@ using TMPro;
 public class gamemanager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI HighscoreText;
     private int score;
 
 
@@ -20,5 +21,19 @@ public class gamemanager : MonoBehaviour
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
 
+        CheckHighScore();
+    }
+
+    void CheckHighScore()
+    {
+        if(score > PlayerPrefs.GetInt("High Score",0))
+        {
+            PlayerPrefs.SetInt("High Score", score);
+        }
+    }
+
+    void UpdateHighScore()
+    {
+        HighscoreText.text = $"Highscore" ;
     }
 }
