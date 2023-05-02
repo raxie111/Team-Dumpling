@@ -6,14 +6,15 @@ using TMPro;
 
 public class gamemanager : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI HighscoreText;
+    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI HighscoreText;
     private int score;
 
 
     void Start()
     {
         UpdateScore(0);
+        UpdateHighScore();
     }
 
     public void UpdateScore(int scoreToAdd)
@@ -29,11 +30,12 @@ public class gamemanager : MonoBehaviour
         if(score > PlayerPrefs.GetInt("High Score",0))
         {
             PlayerPrefs.SetInt("High Score", score);
+            UpdateHighScore();
         }
     }
 
     void UpdateHighScore()
     {
-        HighscoreText.text = $"Highscore" ;
+        HighscoreText.text = $"Highscore: {PlayerPrefs.GetInt("High Score", 0)}" ;
     }
 }
