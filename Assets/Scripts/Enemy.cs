@@ -85,6 +85,6 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
         gameManager.UpdateScore(pointvalue);
-        
+
     }
 }
