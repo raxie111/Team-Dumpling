@@ -35,24 +35,7 @@ public class Proto4_Boss : MonoBehaviour
 
 
 
-    public float Health
-    {
-        set
-        {
-            health = value;
-            if (health <= 0)
-            {
-                RemoveBoss();
-
-            }
-        }
-        get
-        {
-            return health;
-        }
-    }
-
-    public float health = 3;
+    
 
 
 
